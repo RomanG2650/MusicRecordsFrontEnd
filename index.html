@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
-<body>
 
- 
-    
+<body>
+    <div>
+        <h1>Music Records</h1>
+        <h2> Get All Music Records (GET)</h2>
+        <div id="app">
+
+            <button v-on:click="getAllMusicRecords" class="btn btn-primary">Get All Records </button>
+            <ul v-if="records.length">
+                <li v-for="record in records">
+                    <strong>{{record.id}}</strong>
+                    <strong>{{record.title}}</strong>
+                    <strong>{{record.artist}}</strong>
+                    <strong>{{record.duration}}</strong>
+                    <strong>{{record.publicationYear}}</strong>
+
+                </li>
+
+            </ul>
+
 </body>
+
 </html>
