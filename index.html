@@ -19,19 +19,16 @@
 
             <button v-on:click="getAllMusicRecords" class="btn btn-primary">Get All Records </button>
             <ul v-if="records.length">
-                <li v-for="record in records">
+                <li v-for="record in records" :key="record.id">
                     <strong>{{record.id}}</strong>
                     <strong>{{record.title}}</strong>
                     <strong>{{record.artist}}</strong>
                     <strong>{{record.duration}}</strong>
                     <strong>{{record.publicationYear}}</strong>
-
                 </li>
-
             </ul>
- 
         </div>
-        <script src="index.js"></script>
+    </div>
 </body>
 
 </html>
